@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Link to external CSS file -->
+    <script src="script.js" defer></script>
+    <!-- Link to external JavaScript file -->
+  </head>
+  <body>
+    <div>
+      <h1>Filter your playlsit by mood!</h1>
+      <div>
+        We will go through one of your playlists and make a new playlist with
+        all the songs of your chosen mood!
+      </div>
+      <div></div>
+      <form action="/submit" method="post">
+        <label for="playlist-name">Old Playlist Name:</label>
+        <input
+          type="text"
+          id="old_playlist_name"
+          name="old_playlist_name"
+          required
+        />
+        <label for="playlist-name">New Playlist Name:</label>
+        <input
+          type="text"
+          id="new_playlist_name"
+          name="new_playlist_name"
+          required
+        />
+
+        <label for="mood">Mood:</label>
+        <select id="mood" name="mood" required>
+          <option value="">Select a mood</option>
+          <option value="happy">Happy</option>
+          <option value="sad">Sad</option>
+          <option value="hype">Hype</option>
+          <option value="chill">Chill</option>
+        </select>
+
+        <button type="submit">Create Playlist</button>
+      </form>
+
+      {% if message %}
+      <p>{{ message }}</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
